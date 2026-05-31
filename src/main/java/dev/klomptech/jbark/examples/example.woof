@@ -1,0 +1,28 @@
+#!/bin/bark
+
+// Print aliases — each line uses a different verb and style
+bark "Hello from bark"
+woof "Hello from woof"
+growl "Hello from growl"
+howl "Hello from howl"
+whine "Hello from whine"
+yapping "Hello from yapping"
+whining "Hello from whining"
+
+# Hash comments work too
+bark 42
+bark 3.14
+
+// Literals: booleans and assignment
+bark true
+bark false
+bones 5
+dogName bones
+
+// Strings keep // and # literally — not treated as comments
+bark "visit https://example.com"
+bark "color #ff0000"
+
+// Read from stdin into a variable (run the program and type a name when prompted)
+dogName listen
+bark dogName
