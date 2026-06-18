@@ -20,8 +20,7 @@ class ParserShapeTest {
         parseLine("my labrador belongings are \"ball, stick\"", AstNode.SetAttribute.class);
     assertEquals("labrador", inventory.subject());
     assertEquals("inventory", inventory.topic());
-    assertEquals(
-        "ball, stick", ((ParseExpression.StringLiteral) inventory.value()).value());
+    assertEquals("ball, stick", ((ParseExpression.StringLiteral) inventory.value()).value());
   }
 
   @Test

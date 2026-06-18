@@ -22,6 +22,7 @@ import java.util.Set;
 public final class Keywords {
 
   private Keywords() {}
+
   public static final List<String> PRINT_KEYWORDS;
   public static final Map<String, PrintStyle> PRINT_STYLES;
   public static final List<String> BOOLEAN_VALUES;

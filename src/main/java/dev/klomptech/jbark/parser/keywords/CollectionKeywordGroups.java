@@ -49,8 +49,7 @@ public final class CollectionKeywordGroups {
             "unearths",
             "snags");
     stashAddWords =
-        registry.heardWords(
-            "stow", "stows", "snag", "snags", "get", "gets", "collect", "collects");
+        registry.heardWords("stow", "stows", "snag", "snags", "get", "gets", "collect", "collects");
     pileGrabFromWords =
         registry.heardWords(
             "grab", "grabs", "snatch", "snatches", "pull", "pulls", "take", "takes");

@@ -1,5 +1,8 @@
 package dev.klomptech.jbark.config;
 
+import dev.klomptech.jbark.errors.BarkError;
+import dev.klomptech.jbark.lexer.Token;
+import dev.klomptech.jbark.lexer.TokenType;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -10,10 +13,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-
-import dev.klomptech.jbark.errors.BarkError;
-import dev.klomptech.jbark.lexer.Token;
-import dev.klomptech.jbark.lexer.TokenType;
 
 public final class ConfigLoader {
 
@@ -272,7 +271,10 @@ public final class ConfigLoader {
     if (!isBreed(name)) {
       throw new BarkError(
           line,
-          "\"" + name + "\" isn't a breed we know about. Garbage bin mix??" + NameHints.hintPhrase(name, listBreeds()));
+          "\""
+              + name
+              + "\" isn't a breed we know about. Garbage bin mix??"
+              + NameHints.hintPhrase(name, listBreeds()));
     }
   }
 }

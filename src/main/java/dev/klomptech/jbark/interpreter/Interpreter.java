@@ -1,13 +1,5 @@
 package dev.klomptech.jbark.interpreter;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
-
 import dev.klomptech.jbark.cli.DogArt;
 import dev.klomptech.jbark.config.ConfigLoader;
 import dev.klomptech.jbark.config.DogTopics;
@@ -21,6 +13,13 @@ import dev.klomptech.jbark.parser.ParseExpression;
 import dev.klomptech.jbark.parser.collection.StashSpots;
 import dev.klomptech.jbark.parser.expression.ComparisonOp;
 import dev.klomptech.jbark.print.PrintStyle;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Set;
 
 // Runs a parsed .woof program.
 public final class Interpreter {
@@ -140,7 +139,9 @@ public final class Interpreter {
         && lastBreed != null
         && hasTrait(lastBreed, "wet")) {
       formatted =
-          (PrintStyles.format(resolvedStyle, output) + " " + PrintStyles.format(resolvedStyle, output))
+          (PrintStyles.format(resolvedStyle, output)
+                  + " "
+                  + PrintStyles.format(resolvedStyle, output))
               .trim();
     } else {
       formatted = PrintStyles.format(resolvedStyle, output);
@@ -933,7 +934,8 @@ public final class Interpreter {
       return n.value();
     }
     throw new BarkError(
-        line, "The dogs can't count that. expected a number, got " + BarkValue.describe(value) + ".");
+        line,
+        "The dogs can't count that. expected a number, got " + BarkValue.describe(value) + ".");
   }
 
   private static boolean truthy(final BarkValue value) {

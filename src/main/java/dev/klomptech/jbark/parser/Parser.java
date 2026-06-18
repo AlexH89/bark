@@ -1,8 +1,5 @@
 package dev.klomptech.jbark.parser;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import dev.klomptech.jbark.BarkOptions;
 import dev.klomptech.jbark.errors.BarkError;
 import dev.klomptech.jbark.lexer.Token;
@@ -21,6 +18,8 @@ import dev.klomptech.jbark.parser.controlflow.WhileParser;
 import dev.klomptech.jbark.parser.input.InputParser;
 import dev.klomptech.jbark.parser.printing.PrintParser;
 import dev.klomptech.jbark.parser.share.ShareParser;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Parser {
 

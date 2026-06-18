@@ -309,8 +309,7 @@ public class PrintParser {
   private boolean shouldUseValueAfterVerb(final int printOffset, final int tokenCount) {
     for (int offset = printOffset + 1; offset < tokenCount; offset++) {
       Token token = parser.peekAt(offset);
-      if (token.is(TokenType.IDENTIFIER)
-          && Keywords.isIgnored(parser.normalise(token.value()))) {
+      if (token.is(TokenType.IDENTIFIER) && Keywords.isIgnored(parser.normalise(token.value()))) {
         continue;
       }
       if (tokenLooksLikeExpressionValue(token, offset)) {

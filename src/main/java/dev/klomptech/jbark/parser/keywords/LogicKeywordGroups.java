@@ -36,7 +36,8 @@ public final class LogicKeywordGroups {
     comparisonNotEqualWords = registry.phraseWords("different", "unlike", "differs");
     comparisonGreaterWords =
         registry.phraseWords("louder", "bigger", "more", "over", "above", "exceeds");
-    comparisonLessWords = registry.phraseWords("less", "fewer", "smaller", "under", "below", "quieter");
+    comparisonLessWords =
+        registry.phraseWords("less", "fewer", "smaller", "under", "below", "quieter");
     comparisonAtLeastWords = registry.phraseWords("least");
     comparisonAtMostWords = registry.phraseWords("most");
     notWords = registry.heardWords("not", "never");

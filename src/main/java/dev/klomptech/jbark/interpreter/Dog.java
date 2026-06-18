@@ -142,7 +142,8 @@ public final class Dog {
     if (value instanceof BarkValue.BarkString s) {
       return s.value();
     }
-    throw new BarkError(line, "That needs words on her tag, not " + BarkValue.describe(value) + ".");
+    throw new BarkError(
+        line, "That needs words on her tag, not " + BarkValue.describe(value) + ".");
   }
 
   private static boolean asBool(final BarkValue value, final int line) throws BarkError {

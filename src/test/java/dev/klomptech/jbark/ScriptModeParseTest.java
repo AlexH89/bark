@@ -15,10 +15,8 @@ class ScriptModeParseTest {
   @Test
   void scriptStashFormsWithoutFillerWord() throws BarkError {
     assertEquals(
-        "cookie_jar",
-        parseLine("cookie_jar holds \"a\", \"b\"", AstNode.StashInit.class).stash());
-    assertEquals(
-        "cookie_jar", parseLine("cookie_jar empty", AstNode.StashClear.class).stash());
+        "cookie_jar", parseLine("cookie_jar holds \"a\", \"b\"", AstNode.StashInit.class).stash());
+    assertEquals("cookie_jar", parseLine("cookie_jar empty", AstNode.StashClear.class).stash());
     assertEquals(
         "cookie_jar", parseLine("cookie_jar drops first", AstNode.StashRemove.class).stash());
   }
@@ -26,8 +24,7 @@ class ScriptModeParseTest {
   @Test
   void scriptPrintFirstStashItem() throws BarkError {
     AstNode.Print print = parseLine("whimper first from cookie_jar", AstNode.Print.class);
-    ParseExpression.StashAccess access =
-        (ParseExpression.StashAccess) print.values().get(0);
+    ParseExpression.StashAccess access = (ParseExpression.StashAccess) print.values().get(0);
     assertEquals("cookie_jar", access.stash());
     assertEquals("first", access.which());
     assertEquals(ParseExpression.StashPart.ELEMENT, access.part());

@@ -35,7 +35,8 @@ public final class AttributeKeywordGroups {
   public final List<String> orWords;
 
   public AttributeKeywordGroups(final KeywordRegistry registry) {
-    traitWords = registry.heardWords("loud", "greedy", "lazy", "wet", "fetchy", "chaser", "playful");
+    traitWords =
+        registry.heardWords("loud", "greedy", "lazy", "wet", "fetchy", "chaser", "playful");
     foodIncrementWords =
         registry.heardWords("feed", "feeds", "refills", "steals", "pinch", "pinches");
     itemIncrementWords =

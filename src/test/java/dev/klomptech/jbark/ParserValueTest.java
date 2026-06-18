@@ -75,8 +75,7 @@ class ParserValueTest {
   void storyJournalIsString() throws BarkError {
     AstNode.Assign assign = parseLine("journal is \"walk time\"", AstNode.Assign.class);
     assertEquals(ConfigLoader.journalName(), assign.variable());
-    assertEquals(
-        "walk time", ((ParseExpression.StringLiteral) assign.value()).value());
+    assertEquals("walk time", ((ParseExpression.StringLiteral) assign.value()).value());
   }
 
   @Test
@@ -109,13 +108,11 @@ class ParserValueTest {
   @Test
   void valueParserSkipsGlueAfterCollectionName() throws BarkError {
     Parser parser =
-        new Parser(
-            new Lexer("cookie_jar stash first\n").tokenise(), BarkOptions.defaults());
+        new Parser(new Lexer("cookie_jar stash first\n").tokenise(), BarkOptions.defaults());
     ParseExpression.StashAccess withGlue =
         (ParseExpression.StashAccess)
             new ValueParser(parser).parsePart(0, parser.countTokensAhead(0));
-    parser =
-        new Parser(new Lexer("cookie_jar first\n").tokenise(), BarkOptions.defaults());
+    parser = new Parser(new Lexer("cookie_jar first\n").tokenise(), BarkOptions.defaults());
     ParseExpression.StashAccess plain =
         (ParseExpression.StashAccess)
             new ValueParser(parser).parsePart(0, parser.countTokensAhead(0));
