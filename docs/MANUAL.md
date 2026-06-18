@@ -35,7 +35,61 @@ Bark has two interpreters: **jbark** (Java) and **pbark** (Python). They accept 
 
 ### Java (jbark)
 
-**Release** (after unzipping [GitHub Releases](https://github.com/AlexH89/bark/releases); Java 25+):
+- Requires Java 25+.
+
+- Install options:
+
+**GitHub Release**
+
+Download the latest release from [GitHub Releases](https://github.com/AlexH89/bark/releases), unzip it, and run:
+
+```bash
+./bark story.woof
+```
+
+**Homebrew (macOS)**
+
+Install with the Bark Homebrew tap:
+
+```
+brew tap AlexH89/tap
+brew install bark
+```
+
+Then run:
+
+```
+bark story.woof
+bark --help
+bark --version
+```
+
+**Java library (Maven Central)**
+
+For using Bark inside another Java application:
+
+```
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation("io.github.alexh89:bark:1.0.0")
+}
+```
+
+The Maven dependency is the library version of Bark. It lets Java applications embed the parser and interpreter.
+
+It is different from the CLI download:
+
+```
+bark-1.0.0-all.jar → runnable Bark command line interpreter
+io.github.alexh89:bark:1.0.0 → Java dependency for applications
+```
+
+The Maven dependency does not install a global bark command. For the command line interpreter, use the GitHub release zip or install with Homebrew.
+
+**Release usage**
 
 | Command                             | Need to know                             |
 | ----------------------------------- | ---------------------------------------- |
@@ -52,9 +106,28 @@ Windows: `bark.cmd` instead of `bark`. The launchers wrap `java -jar bark-*-all.
 
 **From a clone** (developers):
 
-Gradle: `./gradlew run --args="examples/woof/tutorial.woof"`
+**Gradle:** 
+```
+./gradlew run --args="examples/woof/tutorial.woof"
+```
+After:
 
-After `./gradlew shadowJar`: `./bin/bark examples/woof/tutorial.woof` (or `./gradlew dist` then `./build/dist/bark …`).
+```
+./gradlew shadowJar
+```
+
+run:
+
+```
+./bin/bark examples/woof/tutorial.woof
+```
+
+or:
+
+```
+./gradlew dist
+./build/dist/bark examples/woof/tutorial.woof
+```
 
 ### Python (pbark)
 

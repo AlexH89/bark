@@ -186,7 +186,23 @@ Pipe a story from stdin (Ctrl+D on Mac/Linux, Ctrl+Z then Enter on Windows when 
 ./bark
 ```
 
-**Homebrew (later):** a personal tap (`brew install AlexH89/tap/bark`) does not need Homebrew-core approval. Getting into **homebrew-core** is the slow path (popularity thresholds, review). A tap is fine for a hobby project whenever you want it.
+#### Homebrew (macOS)
+
+Install using the Bark Homebrew tap:
+
+```bash
+brew tap AlexH89/tap
+brew install bark
+```
+
+Then run:
+
+```
+bark mystory.woof
+bark --help
+bark --version
+```
+This installs the same CLI interpreter as the GitHub release.
 
 #### Build from source (developers)
 
@@ -202,19 +218,34 @@ Clone [github.com/AlexH89/bark](https://github.com/AlexH89/bark), then Gradle ru
 
 On Windows, use `gradlew.bat` and `bin\bark.cmd`.
 
-### Use as a Java library (Maven Central, later)
+### Use as a Java library (Maven Central)
 
 Other Java projects can depend on the **library JAR** (not the fat `-all` CLI):
 
 ```gradle
-repositories { mavenCentral() }
+repositories {
+    mavenCentral()
+}
 
 dependencies {
-    implementation("dev.klomptech:bark:1.0.0")
+    implementation("io.github.alexh89:bark:1.0.0")
 }
 ```
 
-That embeds the parser and interpreter in your own app. It does **not** install a global `bark` command. For that, use the release zip or put `bin/bark` on your `PATH`.
+This is the library version of Bark. It lets Java applications embed the parser and interpreter.
+
+It is different from the CLI download:
+
+```
+bark-1.0.0-all.jar → runnable Bark command line interpreter
+io.github.alexh89:bark:1.0.0 → Java dependency for applications
+```
+The Maven dependency does not install a global bark command. For the command line interpreter, use the GitHub release zip or install with Homebrew:
+
+```
+brew tap AlexH89/tap
+brew install bark
+```
 
 ### Python (pbark): requires Python 3.10+
 

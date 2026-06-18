@@ -3,10 +3,11 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
     java
     application
-    `maven-publish`
     checkstyle
+    signing
     id("com.diffplug.spotless") version "7.0.4"
     id("com.gradleup.shadow") version "9.0.2"
+    id("com.vanniktech.maven.publish") version "0.36.0"
 }
 
 group = findProperty("group") as String
@@ -28,7 +29,6 @@ java {
         languageVersion = JavaLanguageVersion.of(25)
     }
     withSourcesJar()
-    withJavadocJar()
 }
 
 checkstyle {
@@ -105,45 +105,52 @@ tasks.register("lint") {
 }
 
 publishing {
-    publications {
-        create<MavenPublication>("maven") {
-            from(components["java"])
-            pom {
-                name.set("Bark")
-                description.set("A dog-themed esoteric story programming language (JBark interpreter)")
-                url.set("https://github.com/AlexH89/bark")
-                licenses {
-                    license {
-                        name.set("GNU Affero General Public License v3.0 or later")
-                        url.set("https://www.gnu.org/licenses/agpl-3.0.html")
-                        distribution.set("repo")
-                    }
-                }
-                developers {
-                    developer {
-                        id.set("AlexH89")
-                        name.set("Alex Hovenkamp")
-                        url.set("https://github.com/AlexH89")
-                    }
-                }
-                scm {
-                    connection.set("scm:git:git://github.com/AlexH89/bark.git")
-                    developerConnection.set("scm:git:ssh://github.com:AlexH89/bark.git")
-                    url.set("https://github.com/AlexH89/bark")
-                }
-                issueManagement {
-                    system.set("GitHub")
-                    url.set("https://github.com/AlexH89/bark/issues")
-                }
-            }
-        }
-    }
     repositories {
         maven {
             name = "buildDir"
             url = uri(layout.buildDirectory.dir("repo"))
         }
-        // Maven Central: add the signing plugin and a Sonatype repository block
-        // once centralUsername / centralPassword are set in ~/.gradle/gradle.properties.
     }
+}
+
+mavenPublishing {
+    publishToMavenCentral()
+    signAllPublications()
+
+    coordinates(
+        "io.github.alexh89",
+        "bark",
+        version.toString()
+    )
+
+    pom {
+        name.set("Bark")
+        description.set("A dog-themed esoteric story programming language (JBark interpreter)")
+        url.set("https://github.com/AlexH89/bark")
+
+        licenses {
+            license {
+                name.set("GNU Affero General Public License v3.0 or later")
+                url.set("https://www.gnu.org/licenses/agpl-3.0.html")
+            }
+        }
+
+        developers {
+            developer {
+                id.set("AlexH89")
+                name.set("Alex Hovenkamp")
+                url.set("https://github.com/AlexH89")
+            }
+        }
+
+        scm {
+            url.set("https://github.com/AlexH89/bark")
+            connection.set("scm:git:https://github.com/AlexH89/bark.git")
+            developerConnection.set("scm:git:ssh://github.com/AlexH89/bark.git")
+        }
+    }
+}
+
+signing {
+    useGpgCmd()
 }
