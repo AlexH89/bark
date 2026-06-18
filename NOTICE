@@ -1,0 +1,15 @@
+Bark
+Copyright (C) 2026 Alex Hovenkamp
+
+This program is free software: you can redistribute it and/or modify it under
+the terms of the GNU Affero General Public License as published by the Free
+Software Foundation, either version 3 of the License, or (at your option) any
+later version. See LICENSE.
+
+Attribution
+-----------
+
+When you distribute, modify, or run a modified version of Bark as a network
+service, you must credit Alex Hovenkamp as the original author of Bark in
+prominent documentation (README, about screen, or equivalent), in addition to
+the copyright and license notices required by the AGPL.

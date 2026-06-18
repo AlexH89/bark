@@ -1,0 +1,15 @@
+// Esolang tradition demo: counter loop (Brainfuck joke, Bark edition).
+//
+// In Brainfuck, +++++. means: add 1 five times (+), then print the cell (.).
+// We don't run Brainfuck here. Same idea: loop, increment, show the result.
+//
+// Run: ./gradlew run --args="examples/woof/counter-tradition.woof"
+
+I have a corgi.
+
+while she sniffs less toys than 8 then
+    she finds a toy
+bury
+
+bark "The count is:"
+she woof how many toys she has

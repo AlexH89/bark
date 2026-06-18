@@ -1,0 +1,18 @@
+// Run: ./gradlew run --args="examples/woof/rebuild-if-while.woof"
+
+labrador
+my labrador has 3 toys
+
+when she has more than 2 toys then
+    she woofs "Plenty."
+    she misplaces a toy
+otherwise when she has 1 toy then
+    she woofs "Just one."
+otherwise
+    she woofs "None."
+bury
+
+while she has more than 0 toys then
+    she woofs "Still going."
+    she misplaces a toy
+bury

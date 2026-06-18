@@ -1,0 +1,13 @@
+cookie_jar
+toy_basket
+toy_box
+treat_jar
+treat_pouch
+treat_bag
+walk_bag
+snack_drawer
+biscuit_tin
+chew_toy_bin
+under_the_couch
+dog_crate
+scraps

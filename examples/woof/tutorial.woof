@@ -1,0 +1,30 @@
+// Bimba's morning at the park. The Bark tutorial story.
+// Run: ./gradlew run --args="examples/woof/tutorial.woof"
+
+bark "The gate opens and Bimba trots into the sun."
+
+I have a labrador.
+She has 2 toys.
+Her name is "Bimba".
+
+bark "She checks her toys before the others arrive."
+she woof how many toys she has
+
+when she has 2 toys then she woof "Ready to play." otherwise she whine "Needs more toys."
+
+I have a beagle.
+bark "Benny shows up late, as always."
+she passes a toy to the beagle
+
+her cookie jar holds "biscuit", "stick"
+bark "Someone left treats in the jar by the bench."
+she whimpers as she wants the first biscuit from her cookie jar
+
+when she has 1 toy then she woof her name
+
+bark "The pack heads home when the jar is empty."
+her cookie jar is empty
+she woof how many toys she has
+she woof how many toys the beagle has
+
+bark bark bark

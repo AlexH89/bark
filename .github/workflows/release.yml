@@ -1,0 +1,42 @@
+name: Release
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "25"
+
+      - name: Build, test, and package
+        run: ./gradlew spotlessCheck check test dist --warning-mode all
+
+      - name: Read version
+        id: version
+        run: echo "version=$(grep '^version=' gradle.properties | cut -d= -f2)" >> "$GITHUB_OUTPUT"
+
+      - name: Zip distribution
+        run: |
+          cd build/dist
+          zip -r "../bark-${{ steps.version.outputs.version }}.zip" .
+
+      - name: Upload release assets
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ steps.version.outputs.version }}
+          name: v${{ steps.version.outputs.version }}
+          generate_release_notes: true
+          files: |
+            build/libs/bark-${{ steps.version.outputs.version }}-all.jar
+            build/dist/bark
+            build/dist/bark.cmd
+            build/bark-${{ steps.version.outputs.version }}.zip

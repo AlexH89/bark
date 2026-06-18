@@ -1,15 +1,15 @@
 package dev.klomptech.jbark.lexer;
 
 public enum TokenType {
-    // Console & STDIN
-    STDIN,
-
-    // Literals
-    STRING, NUMBER, BOOLEAN, IDENTIFIER,
-
-    // Printing
-    PRINT,
-
-    // Structure
-    NEWLINE, EOF,
+  EOF,
+  PERIOD,
+  COMMA,
+  NEWLINE,
+  STRING,
+  NUMBER,
+  IDENTIFIER,
+  PLUS,
+  MINUS,
+  STAR,
+  SLASH
 }

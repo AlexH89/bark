@@ -1,0 +1,5 @@
+laundry_basket
+plate_stack
+pillow_heap
+shoe_pile
+newspaper_stack

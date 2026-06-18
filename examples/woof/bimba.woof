@@ -1,0 +1,64 @@
+bark "Narrator: Bimba waits by her food bowl while the house still sleeps."
+
+So, my wife has a labrador
+She has 2 toys
+Her name is "Bimba"
+
+bark "Narrator: Bimba's cookie jar sits on the counter, tempting her nose..."
+
+her cookie jar holds some items: "cookie", "cookie", "cookie", "cookie"
+memory is count of the items in the cookie jar
+her toy box holds some items: "ball", "squeaky toy", "stick"
+
+bark: "Narrator: with the jar out of her reach, she decides to focus on her toys."
+when she has 4 toys then she woofs "time to play!" otherwise she whines "I want more toys!"
+
+bark "Narrator: with the humans still asleep it is time to play, but first Bimba needs more toys!"
+she snags a toy
+the toy box loses the first item
+she snags a toy
+the toy box loses the first item
+she snags a toy
+the toy box loses the first item
+bark "Narrator: Greedy dogs always take more than one toy, three in this case!"
+
+bark "Narrator: Bimba now has this many toys: "
+bark how many toys Bimba has
+bark "Narrator: The toy box now has this many toys: "
+bark how many toys the toy box has
+
+bark "Narrator: But after playing the cookies are now too temping, Bimba knocks the cookie jar onto the ground"
+she whimpers as she wants and takes the first biscuit from her cookie jar
+
+bark "Narrator: Bimba is not alone, there is also the dachshund Pepon"
+I have a dachshund.
+bark "Narrator: He is a bit simple and enters the room, tail already wagging."
+Bimba shares with the dachshund
+
+bark "Narrator: Bimba shared toys with Pepon (a miracle) and now looks at her remaining toys and says:"
+when she has 3 toys then she howls "That was fine" otherwise she whines "I want it back!"
+
+bark "Narrator: She decided to inform Pepon of how many toys she had left by barking."
+she woofs how many toys she has
+
+bark "Narrator: Bimba also informed Pepon of how many toys he now has..."
+she woofs how many toys the dachshund has
+
+bark "Narrator: a human is finally awake shouts how how many toys are left in the box:"
+shout how many items are in the toy box
+
+bark "Narrator: they made the mistake of putting the jar on the ground and looked away for a second"
+Bimba pinches a treat
+she pinches a treat
+she pinches a treat
+the cookie jar is empty
+
+bark "Narrator: The human checks how many cookies are left and shouts: "
+The human shouts how many items are in the cookie jar
+
+bark "Narrator: The human checks how many snacks Bimba stole:"
+when Bimba has 4 treats then the human growls "Nothing left." otherwise they growl memory minus how many treats Bimba has, "missing!"
+
+bark "Narrator: I wonder who took the other cookie... The naughty dogs run away with their little stomping feet"
+
+bark bark bark

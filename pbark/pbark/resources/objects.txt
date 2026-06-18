@@ -1,0 +1,16 @@
+ball
+bone
+bowl
+biscuit
+cookie
+frisbee
+orange
+leash
+snack
+squeaky_toy
+stick
+tennis_ball
+sweets
+sweet
+slippers
+toy_box

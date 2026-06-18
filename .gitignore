@@ -16,7 +16,18 @@ build/
 # IDE build output
 # =========================
 out/
-bin/
+/bin/
+
+# =========================
+# Python (pbark)
+# =========================
+pbark/.venv/
+pbark/**/__pycache__/
+pbark/*.egg-info/
+pbark/.pytest_cache/
+__pycache__/
+*.egg-info/
+.pytest_cache/
 
 # =========================
 # IntelliJ IDEA
@@ -41,9 +52,14 @@ bin/
 Thumbs.db
 
 # =========================
+# Local experiments (not shipped)
+# =========================
+examples/scratch/
+
+# =========================
 # Temporary files
 # =========================
 *.tmp
 *.swp
 *~
-```
+docs/RELEASE-*.md

@@ -1,75 +1,77 @@
 package dev.klomptech.jbark.interpreter;
 
-public sealed interface BarkValue permits
-    BarkValue.BarkString,
-    BarkValue.BarkNumber,
-    BarkValue.BarkBoolean,
-    BarkValue.BarkNull {
+public sealed interface BarkValue
+    permits BarkValue.BarkString, BarkValue.BarkNumber, BarkValue.BarkBoolean, BarkValue.BarkNull {
 
-    // Human readable representation of the value
-    String display();
+  // Human readable representation of the value
+  String display();
 
-    /** True when both values are the same type and hold the same data. */
-    boolean equalTo(BarkValue other);
+  // For error messages when value may be null
+  static String describe(final BarkValue value) {
+    return value == null ? "nothing" : value.display();
+  }
 
-    record BarkString(String value) implements BarkValue {
-        @Override
-        public String display() {
-            return value;
-        }
+  // Same type and same data?
+  boolean equalTo(BarkValue other);
 
-        @Override
-        public boolean equalTo(final BarkValue other) {
-            return other instanceof BarkString(String v) && value.equals(v);
-        }
+  record BarkString(String value) implements BarkValue {
+    @Override
+    public String display() {
+      return value;
     }
 
-    record BarkNumber(double value) implements BarkValue {
-        @Override
-        public String display() {
-            boolean isWholeNumber = Math.floor(value) == value && !Double.isInfinite(value);
-            return isWholeNumber ? String.valueOf((long) value) : String.valueOf(value);
-        }
-
-        @Override
-        public boolean equalTo(final BarkValue other) {
-            return other instanceof BarkNumber(double v) && value == v;
-        }
+    @Override
+    public boolean equalTo(final BarkValue other) {
+      return other instanceof BarkString(String v) && value.equals(v);
     }
-    
-    record BarkBoolean(boolean value) implements BarkValue {
-        @Override
-        public String display() {
-            return value ? "true" : "false";
-        }
+  }
 
-        @Override
-        public boolean equalTo(final BarkValue other) {
-            return other instanceof BarkBoolean(boolean v) && value == v;
-        }
+  record BarkNumber(double value) implements BarkValue {
+    @Override
+    public String display() {
+      boolean isWholeNumber = Math.floor(value) == value && !Double.isInfinite(value);
+      return isWholeNumber ? String.valueOf((long) value) : String.valueOf(value);
     }
 
-    record BarkNull() implements BarkValue {
-        @Override
-        public String display() {
-            return "null";
-        }
+    @Override
+    public boolean equalTo(final BarkValue other) {
+      return other instanceof BarkNumber(double v) && value == v;
+    }
+  }
 
-        @Override
-        public boolean equalTo(final BarkValue other) {
-            return other instanceof BarkNull;
-        }
+  record BarkBoolean(boolean value) implements BarkValue {
+    @Override
+    public String display() {
+      return value ? "true" : "false";
     }
 
-    static BarkValue of(final String value) {
-        return new BarkString(value);
+    @Override
+    public boolean equalTo(final BarkValue other) {
+      return other instanceof BarkBoolean(boolean v) && value == v;
+    }
+  }
+
+  record BarkNull() implements BarkValue {
+    @Override
+    public String display() {
+      return "null";
     }
 
-    static BarkValue of(final double value) {
-        return new BarkNumber(value);
+    @Override
+    public boolean equalTo(final BarkValue other) {
+      return other instanceof BarkNull;
     }
+  }
 
-    static BarkValue of(final boolean value) {
-        return new BarkBoolean(value);
-    }
+  static BarkValue of(final String value) {
+    return new BarkString(value);
+  }
+
+  static BarkValue of(final double value) {
+    return new BarkNumber(value);
+  }
+
+  static BarkValue of(final boolean value) {
+    return new BarkBoolean(value);
+  }
 }
