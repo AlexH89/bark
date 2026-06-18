@@ -202,8 +202,6 @@ Clone [github.com/AlexH89/bark](https://github.com/AlexH89/bark), then Gradle ru
 
 On Windows, use `gradlew.bat` and `bin\bark.cmd`.
 
-When you are ready to publish: [docs/RELEASE-JAVA.md](docs/RELEASE-JAVA.md) (GitHub Releases, Maven Central, Homebrew).
-
 ### Use as a Java library (Maven Central, later)
 
 Other Java projects can depend on the **library JAR** (not the fat `-all` CLI):
@@ -356,8 +354,6 @@ More notes: [examples/README.md](examples/README.md)
 | --- | --- |
 | [docs/MANUAL.md](docs/MANUAL.md) | Grammar, registries, runtime rules |
 | [docs/AUTHOR.md](docs/AUTHOR.md) | Writing stories, voice, filler, tips |
-| [docs/RELEASE-JAVA.md](docs/RELEASE-JAVA.md) | Ship jbark — **done in repo:** workflow + JAR build. **You still do:** run Release workflow; optional Maven Central + Homebrew |
-| [docs/RELEASE-PYTHON.md](docs/RELEASE-PYTHON.md) | Ship pbark — **done in repo:** interpreter, tests, bundled resources. **You still do:** PyPI account + `twine upload` |
 | [examples/README.md](examples/README.md) | Runnable tour |
 
 
