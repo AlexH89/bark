@@ -63,3 +63,12 @@ examples/scratch/
 *.swp
 *~
 docs/RELEASE-*.md
+
+# Python build artifacts
+pbark/dist/
+pbark/*.egg-info/
+
+# Python virtual environments
+pbark/.venv/
+pbark/venv/
+

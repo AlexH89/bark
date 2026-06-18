@@ -1,5 +1,8 @@
 # Bark
 
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.alexh89/bark)](https://central.sonatype.com/)
+[![PyPI](https://img.shields.io/pypi/v/pbark)](https://pypi.org/project/pbark/)
+
 **A dog-themed esoteric programming language that reads like a short story.**
 
 **Repository:** [github.com/AlexH89/bark](https://github.com/AlexH89/bark)
@@ -37,9 +40,12 @@ she woofs how many toys she has
 
 | You have… | Do this |
 |-----------|---------|
-| **Release zip** from [GitHub Releases](https://github.com/AlexH89/bark/releases) | Unzip (`bark`, `bark.cmd`, JAR). Run **your own** story: `./bark mystory.woof`, the zip does **not** include `examples/`. Requires **Java 25+**. |
-| **A clone** (Java) | `./gradlew run --args="examples/woof/bimba.woof"` or, after `./gradlew shadowJar`, `./bin/bark examples/woof/bimba.woof` |
-| **A clone** (Python) | `cd pbark && pip install -e .` then `./bin/pbark ../examples/woof/bimba.woof`, requires **Python 3.10+** |
+| **Homebrew (macOS/Linux)** | `brew install AlexH89/tap/bark` then run `bark mystory.woof`. Requires **Java 25+**. |
+| **Java release zip** from [GitHub Releases](https://github.com/AlexH89/bark/releases) | Unzip (`bark`, `bark.cmd`, JAR). Run **your own** story: `./bark mystory.woof`. The zip does **not** include `examples/`. Requires **Java 25+**. |
+| **Maven Central (Java library)** | Add `io.github.alexh89:bark:1.0.0` as a dependency. This embeds the interpreter library; it does **not** install the `bark` command. |
+| **PyPI (Python)** | `pip install pbark` then run `pbark mystory.woof`. Requires **Python 3.10+**. |
+| **A clone (developers)** | Java: `./gradlew run --args="examples/woof/bimba.woof"` or after `./gradlew shadowJar`, `./bin/bark examples/woof/bimba.woof` |
+| **A clone (Python developers)** | `cd pbark && pip install -e .` then `./bin/pbark ../examples/woof/bimba.woof` |
 
 On Windows use `bark.cmd` / `gradlew.bat` instead of `./bark` / `./gradlew`.
 
@@ -47,7 +53,7 @@ More: [docs/AUTHOR.md](docs/AUTHOR.md) · [docs/MANUAL.md](docs/MANUAL.md) · [e
 
 ---
 
-## How we got here
+## How we got here ##
 
 Sometimes things just click together. As head of a QA department you obviously code slightly less than in my times as a developer or SDET. Because of this, I find it important to keep my programming skills sharp. Luckily, this is usually not hard to do. Apart from exposure at work, I also often have people around me that need scripts or projects to solve specific problems in their life. On top of that, I often work on my own projects or games. 
 
@@ -73,7 +79,7 @@ Bark is definitely in that camp, but then obviously more as a joke and not as ar
 
 Yes... No, unfortunately not. Most of the languages I looked at included a turing completion test. It felt to me like an inside joke or a 'rite of passage'. So obviously I then have to include it as well, can't be breaking tradition after all! So what does it mean? A language is **Turing complete** when it can compute anything a general computer can compute, given enough time, memory, and patience. Branches, loops, variables, and some way to do arithmetic usually get you there. It is the informal “this is a real programming language, not a fancy calculator” badge.
 
-Bark has `when`, `while`, `until`, `for each`, tricks (functions), stashes (lists), piles (stacks), math, and shared state. That is the usual checklist. I did not write a formal proof at 2 a.m like some others mentioned they did. I **did** write [counter-tradition.woof](examples/woof/counter-tradition.woof), which is my version of the inside joke for people who remember/know Brainfuck. Treat “Turing complete” here as big *maybe, definitely not the point*. I did not look into it too much, so there is a pretty big chance people reading this will argue it isn't turing complete at all.
+Bark has `when`, `while`, `until`, `for each`, tricks (functions), stashes (lists), piles (stacks), math, and shared state. That is the usual checklist. I did not write a formal proof at 2 a.m. like some others mentioned they did. I **did** write [counter-tradition.woof](examples/woof/counter-tradition.woof), which is my version of the inside joke for people who remember/know Brainfuck. Treat “Turing complete” here as big *maybe, definitely not the point*. I did not look into it too much, so there is a pretty big chance people reading this will argue it isn't turing complete at all.
 
 ### How Bark fits the genre
 
@@ -107,8 +113,8 @@ So Java/Python isn’t Bark. They are just the toolbox I use to build Bark’s i
 
 Small, weird languages like Bark are just for fun and experiments. An interpreter is **fast to build**, **easy to change**, and **good enough** as  you don’t need the speed or complexity of a full compiler. So we ended up with these two interpreters:
 
-- **jbark**: the Java interpreter (`./bin/bark`, Gradle, release JAR). The reference implementation.
-- **pbark**: the Python interpreter (`./pbark/bin/pbark`, `python -m pbark`). A **semi-automated port** of jbark: same behaviour in intent, but translated from the Java source. Jbark is leading if the two ever diverge.
+- **jbark**: the Java interpreter (`bark` command, Gradle, release JAR, Homebrew). The reference implementation.
+- **pbark**: the Python interpreter (`pbark` command, PyPI package, `python -m pbark`). A semi-automated port of jbark: same behaviour in intent, but translated from the Java source. Jbark is leading if the two ever diverge.
 
 ---
 
@@ -186,7 +192,7 @@ Pipe a story from stdin (Ctrl+D on Mac/Linux, Ctrl+Z then Enter on Windows when 
 ./bark
 ```
 
-#### Homebrew (macOS)
+#### Homebrew (macOS/Linux)
 
 Install using the Bark Homebrew tap:
 
@@ -220,7 +226,7 @@ On Windows, use `gradlew.bat` and `bin\bark.cmd`.
 
 ### Use as a Java library (Maven Central)
 
-Other Java projects can depend on the **library JAR** (not the fat `-all` CLI):
+Other Java projects can depend on Bark from Maven Central using the **library JAR** (not the fat `-all` CLI):
 
 ```gradle
 repositories {
@@ -253,6 +259,22 @@ brew install bark
 
 Check: `python3 --version`
 
+#### Install from PyPI (easiest)
+
+```bash
+pip install pbark
+```
+
+Then run:
+
+```
+pbark mystory.woof
+pbark --help
+pbark --version
+```
+
+This installs the Python interpreter only. The examples folder is still available from the GitHub repository.
+
 From a clone:
 
 ```bash
@@ -280,7 +302,7 @@ pip install -e ".[dev]"
 pytest tests/ -q
 ```
 
-See [pbark/README.md](pbark/README.md) for more. When you are ready to publish: [docs/RELEASE-PYTHON.md](docs/RELEASE-PYTHON.md).
+See [pbark/README.md](pbark/README.md) for more. Release instructions: [docs/RELEASE-PYTHON.md](docs/RELEASE-PYTHON.md).
 
 ---
 
@@ -294,6 +316,12 @@ If you downloaded only the release zip, see **Install and run** above, you need 
 ./gradlew run --args="examples/woof/goodboy.woof"
 # or with pbark:
 ./pbark/bin/pbark examples/woof/goodboy.woof
+```
+
+If installed from PyPI:
+
+```bash
+pbark examples/woof/goodboy.woof
 ```
 
 **Best place to start**: Bimba the labrador's adventures
@@ -406,7 +434,7 @@ More notes: [examples/README.md](examples/README.md)
 
 ## License
 
-[GNU AGPL-3.0](LICENSE): free to use, share, and hack on. Derivatives and network services must stay open and credit [Alex Hovenkamp](docs/AUTHOR.md) as the original author. See [NOTICE](NOTICE).
+[GNU AGPL-3.0-or-later](LICENSE): free to use, share, and hack on. Derivatives and network services must stay open and credit [Alex Hovenkamp](docs/AUTHOR.md) as the original author. See [NOTICE](NOTICE).
 
 ---
 

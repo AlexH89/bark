@@ -131,14 +131,23 @@ or:
 
 ### Python (pbark)
 
-**From a clone** (Python 3.10+):
+**Install from PyPI** (Python 3.10+):
 
 ```bash
-cd pbark && pip install -e .
-./bin/pbark ../examples/woof/tutorial.woof
+pip install pbark
 ```
 
-Or: `python3 -m pbark examples/woof/tutorial.woof` from the repo root (after install).
+Run a Bark story:
+
+```
+pbark story.woof
+```
+
+Or:
+
+```
+python3 -m pbark story.woof
+```
 
 | Command                             | Need to know                             |
 | ----------------------------------- | ---------------------------------------- |
@@ -153,6 +162,20 @@ Or: `python3 -m pbark examples/woof/tutorial.woof` from the repo root (after ins
 
 Tests: `cd pbark && pip install -e ".[dev]" && pytest tests/ -q`
 
+**From a clone (development):**
+
+```
+cd pbark
+pip install -e ".[dev]"
+pytest tests/ -q
+```
+
+The repository contains examples. The PyPI package contains the interpreter only.
+
+To run examples from a clone:
+```
+pbark ../examples/woof/tutorial.woof
+```
 ---
 
 ## 2. Registries
