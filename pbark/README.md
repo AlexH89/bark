@@ -56,7 +56,7 @@ The test suite is ported from jbark's JUnit tests. Golden output, parser shape, 
 
 ## Docs
 
-- [docs/MANUAL.md](../docs/MANUAL.md) — grammar and runtime rules
-- [docs/AUTHOR.md](../docs/AUTHOR.md) — writing stories
-- [docs/RELEASE-PYTHON.md](../docs/RELEASE-PYTHON.md) — what's done vs what you still do for PyPI
-- [examples/](../examples/) — runnable `.woof` programs
+- [docs/MANUAL.md](../docs/MANUAL.md) - grammar and runtime rules
+- [docs/AUTHOR.md](../docs/AUTHOR.md) - writing stories
+- [docs/RELEASE-PYTHON.md](../docs/RELEASE-PYTHON.md) - what's done vs what you still do for PyPI
+- [examples/](../examples/) - runnable `.woof` programs

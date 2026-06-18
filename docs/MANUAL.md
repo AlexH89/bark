@@ -31,7 +31,7 @@ Expression shorthand: `Field(she, items)`, `StashAccess(cookie_jar, COUNT)`, `Bi
 
 ## 1. Running Bark
 
-Bark has two interpreters — **jbark** (Java) and **pbark** (Python). They accept the same `.woof` syntax and should produce the same output.
+Bark has two interpreters: **jbark** (Java) and **pbark** (Python). They accept the same `.woof` syntax and should produce the same output.
 
 ### Java (jbark)
 
@@ -120,10 +120,10 @@ Bark is a **dog-themed story language**, not a general-purpose scripting languag
 
 ### Story variables
 
-Two program-wide variables for story authors — **not** a general variable system:
+Two program-wide variables for story authors, **not** a general variable system:
 
-- `**memory`** — whole number (`ConfigLoader.MEMORY`). Grammar: [§11 Story variables](#11-story-variables).
-- `**journal`** — text (`ConfigLoader.JOURNAL`). Same assign/print glue as `memory`.
+- `memory`: whole number (`ConfigLoader.MEMORY`). Grammar: [§11 Story variables](#11-story-variables).
+- `journal`: text (`ConfigLoader.JOURNAL`). Same assign/print glue as `memory`.
 
 ### Breeds
 
@@ -211,7 +211,7 @@ Per-breed defaults live in `[traits.json](../src/main/resources/traits.json)`. S
 | `loud`    | Dog-voiced `bark`/`barks` → growl (UPPERCASE); narrator `bark` unchanged                                                                                                                        |
 | `lazy`    | `wait` sleeps twice as long                                                                                                                                                                     |
 | `wet`     | `whine` / `whimper` doubled                                                                                                                                                                     |
-| `fetchy`  | Same print twice → *tail THUMP THUMP — same stick, still the best stick* on stdout, then the line again                                                                                         |
+| `fetchy`  | Same print twice → *tail THUMP THUMP, same stick, still the best stick* on stdout, then the line again                                                                                         |
 | `chaser`  | Each loop tick adds **+1 toy** to that dog's **items** (same field as `squirrels` in stories)                                                                                                   |
 | `playful` | Dog speaks → output reversed before formatting; narrator `bark` unchanged. Defaults: bearded collie, border collie, flat-coated retriever, Nova Scotia duck toller, papillon, shetland sheepdog |
 
@@ -424,7 +424,7 @@ Default traits per breed live in `traits.json`. Breeds without an entry start wi
 | `greedy`  | After 3 feeds/gulps/shares in a row, lose 1 treat (food only; counter resets)                                                                                                    |
 | `lazy`    | `wait` sleeps twice as long                                                                                                                                                      |
 | `wet`     | `whine` / `whimper` output doubled                                                                                                                                               |
-| `fetchy`  | Same print twice → *tail THUMP THUMP — same stick, still the best stick* on stdout, then the line again                                                                          |
+| `fetchy`  | Same print twice → *tail THUMP THUMP,  same stick, still the best stick* on stdout, then the line again                                                                          |
 | `chaser`  | Each loop tick adds **+1 toy** to that dog's **items** (same field as `squirrels` in stories)                                                                                    |
 | `playful` | Dog speaks → output reversed before formatting; narrator `bark` unchanged. Defaults: bearded collie, border collie, flat-coated retriever, cockapoo, papillon, shetland sheepdog |
 

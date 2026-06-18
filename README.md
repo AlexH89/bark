@@ -19,7 +19,7 @@ Bark is a **dog-themed esoteric programming language**: you write `.woof` files 
 
 You get variables (dogs, objects, cookie jars), `when` branches, `while` loops, lists, stacks, math, functions called “tricks”, stdin, traits like `greedy` and `fetchy`, and many ways to print (`bark`, `woof`, `howl`, `whimper`, `yapping`, …). Enough for the esoteric-language bingo card. Not enough to run your startup.
 
-**Sample** — this story prints `3` (periods and words like `is` / `has` are optional filler):
+**Sample**: this story prints `3` (periods and words like `is` / `has` are optional filler):
 
 ```woof
 I have a labrador.
@@ -33,13 +33,13 @@ she woofs how many toys she has
 3
 ```
 
-**Try it** — pick an interpreter:
+**Try it**: pick an interpreter:
 
 | You have… | Do this |
 |-----------|---------|
-| **Release zip** from [GitHub Releases](https://github.com/AlexH89/bark/releases) | Unzip (`bark`, `bark.cmd`, JAR). Run **your own** story: `./bark mystory.woof` — the zip does **not** include `examples/`. Requires **Java 25+**. |
+| **Release zip** from [GitHub Releases](https://github.com/AlexH89/bark/releases) | Unzip (`bark`, `bark.cmd`, JAR). Run **your own** story: `./bark mystory.woof`, the zip does **not** include `examples/`. Requires **Java 25+**. |
 | **A clone** (Java) | `./gradlew run --args="examples/woof/bimba.woof"` or, after `./gradlew shadowJar`, `./bin/bark examples/woof/bimba.woof` |
-| **A clone** (Python) | `cd pbark && pip install -e .` then `./bin/pbark ../examples/woof/bimba.woof` — requires **Python 3.10+** |
+| **A clone** (Python) | `cd pbark && pip install -e .` then `./bin/pbark ../examples/woof/bimba.woof`, requires **Python 3.10+** |
 
 On Windows use `bark.cmd` / `gradlew.bat` instead of `./bark` / `./gradlew`.
 
@@ -107,8 +107,8 @@ So Java/Python isn’t Bark. They are just the toolbox I use to build Bark’s i
 
 Small, weird languages like Bark are just for fun and experiments. An interpreter is **fast to build**, **easy to change**, and **good enough** as  you don’t need the speed or complexity of a full compiler. So we ended up with these two interpreters:
 
-- **jbark** — the Java interpreter (`./bin/bark`, Gradle, release JAR). The reference implementation.
-- **pbark** — the Python interpreter (`./pbark/bin/pbark`, `python -m pbark`). A **semi-automated port** of jbark: same behaviour in intent, but translated from the Java source. Jbark is leading if the two ever diverge.
+- **jbark**: the Java interpreter (`./bin/bark`, Gradle, release JAR). The reference implementation.
+- **pbark**: the Python interpreter (`./pbark/bin/pbark`, `python -m pbark`). A **semi-automated port** of jbark: same behaviour in intent, but translated from the Java source. Jbark is leading if the two ever diverge.
 
 ---
 
@@ -134,7 +134,7 @@ Multi-word registry names use spaces in stories (`cookie jar` → `cookie_jar` i
 
 To keep the story dog themed, there is also a limitation to variable names that can be used. Only dog breeds can be used as variable names and they come with a limited set of attributes that can be used and altered (with a few exceptions). These dog breeds can also come with unexpected quirks and behaviour, so be careful with choosing which one to use!
 
-Final need to know: Bimba and Pepon are names you will see often in the examples and tutorials. They are my wife's dogs — Bimba a really intelligent and hungry labrador, Pepon… nobody knows. He is small, simple, but sweet.
+Final need to know: Bimba and Pepon are names you will see often in the examples and tutorials. They are my wife's dogs. Bimba a really intelligent and hungry labrador, Pepon… nobody knows. He is small, simple, but sweet.
 
 ---
 
@@ -142,7 +142,7 @@ Final need to know: Bimba and Pepon are names you will see often in the examples
 
 Bark ships two interpreters that run the same `.woof` programs. Pick whichever runtime you have handy.
 
-### Java (jbark) — requires Java 25+
+### Java (jbark): requires Java 25+
 
 Check: `java -version`
 
@@ -150,7 +150,7 @@ Check: `java -version`
 
 Grab `bark-1.0.0.zip` (or the loose JAR + scripts) from [GitHub Releases](https://github.com/AlexH89/bark/releases). Unzip so `bark`, `bark.cmd`, and `bark-1.0.0-all.jar` sit in the same folder.
 
-The release contains the **interpreter only** — not the example stories. Point it at your own file:
+The release contains the **interpreter only**, not the example stories. Point it at your own file:
 
 ```bash
 ./bark mystory.woof
@@ -214,9 +214,9 @@ dependencies {
 }
 ```
 
-That embeds the parser and interpreter in your own app. It does **not** install a global `bark` command — for that, use the release zip or put `bin/bark` on your `PATH`.
+That embeds the parser and interpreter in your own app. It does **not** install a global `bark` command. For that, use the release zip or put `bin/bark` on your `PATH`.
 
-### Python (pbark) — requires Python 3.10+
+### Python (pbark): requires Python 3.10+
 
 **Note:** pbark is a semi-automated port of jbark. It passes the same test suite, but it was generated/translated from the Java codebase rather than written independently. jbark remains the source of truth.
 
@@ -255,7 +255,7 @@ See [pbark/README.md](pbark/README.md) for more. When you are ready to publish: 
 
 ## Quick start (from a clone)
 
-If you downloaded only the release zip, see **Install and run** above — you need a clone for the `examples/` folder.
+If you downloaded only the release zip, see **Install and run** above, you need a clone for the `examples/` folder.
 
 **Hello world:**
 
@@ -338,7 +338,7 @@ Bare `bark` with no value prints a paw. I was serious about the bit where you sh
 
 | Program | Why run it |
 | ------- | ---------- |
-| [goodboy.woof](examples/woof/goodboy.woof) | Hello world — Pepon the dachshund |
+| [goodboy.woof](examples/woof/goodboy.woof) | Hello world, Pepon the dachshund |
 | [bimba.woof](examples/woof/bimba.woof) | Main story: traits, voices, sharing |
 | [tutorial.woof](examples/woof/tutorial.woof) | Syntax tour at the park |
 | [counter-tradition.woof](examples/woof/counter-tradition.woof) | Esolang tradition, explained with tail wags |
