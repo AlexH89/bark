@@ -75,7 +75,7 @@ def test_tutorial_story_output(examples_dir):
 She checks her toys before the others arrive.
 2
 READY TO PLAY.
-Benny shows up late, as always.
+Hazel shows up late, as always.
 Someone left treats in the jar by the bench.
 whimper
 BIMBA
